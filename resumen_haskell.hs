@@ -72,6 +72,11 @@ decisionSimple3 = if 1 == 1
                 then "True"
                 else "False"
 
+condicionSimple :: Int -> Int
+condicionSimple param | param == 0 = 1
+                      | param > 0 = 2
+                      | param < 0 = 3
+
 {-
 se tiene un caso especial con los condicionales case pues si 
 cambian bastante a lo que conocemos viniendo de java,
@@ -110,6 +115,7 @@ opcion2 n = case n of
 -- ===================================    
 -- en haskell no existen los ciclos
 -- todo se hace forma recursiva lamentablemente
+-- también tiene casos donde se puede ver claramente la teoría de conjuntos
 -- ===================================    
 
 
@@ -117,6 +123,10 @@ sumNumerosNaturales :: Int -> Int
 sumNumerosNaturales n
     | n <= 0    = 0
     | otherwise = n + sumNumerosNaturales (n - 1)
+
+diferenciaConjuntos :: Eq a => [a] -> [a] -> [a]
+diferenciaConjuntos xs ys = [x | x <- xs, x `notElem` ys]
+
 
 
 -- funciones curiosas que me encontré
@@ -132,7 +142,7 @@ publit []int dobleDeUnArray (){
 -}
 -- es mucho más rapido
 dobleDeUnArray :: [Int]
-dobleDeUnArray = map (*2) [1..5] -- [2,4, 6, 8, 10]
+dobleDeUnArray = map (*3) [1..5] -- [2,4, 6, 8, 10]
 
 
 -- ===================================    
