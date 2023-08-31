@@ -24,7 +24,7 @@ division :: Int -> Int -> Int
 division x y = x `div` y
 -- funcion que retorna el cuadrado de un número
 {-
-publid int cuadrado(int a){
+public int cuadrado(int a){
     return a * a;
 }
 -}
